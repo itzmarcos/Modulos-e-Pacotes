@@ -21,3 +21,14 @@ def diminuir(p=0, t=0, f=False):
 def moeda(p=0, moeda='R$'):
     return f'{moeda}{p:.2f}'.replace('.', ',')
 
+
+def resumo(p=0, t=0, d=0):
+    print('-' * 20)
+    print('   RESUMO DO VALOR')
+    print('-' * 20)
+    print(f'Preço analisado: {moeda(p)}')
+    print(f'Dobro do preço:  {dobro(p, True)}')
+    print(f'Metade do preço: {metade(p, True)}')
+    print(f'80% de aumento:  {aumento(p, t,True)}')
+    print(f'35% de redução:  {diminuir(p, d, True)}')
+
