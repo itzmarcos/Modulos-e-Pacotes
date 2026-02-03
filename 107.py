@@ -1,5 +1,5 @@
-import moeda
-#ex107,108
+from utilidades.moedas import moeda
+from utilidades.dados import dados
 
-p = float(input('Digite o preço: R$'))
+p = dados.validador('Digite o preço: R$')
 moeda.resumo(p, 80, 35)
