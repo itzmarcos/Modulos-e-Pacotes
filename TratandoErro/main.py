@@ -1,39 +1,29 @@
-def leiaInt(msg):
-    ok = False
-    valor = 0
-    while True:
-        n = str(input(msg))
-        if n.isnumeric():
-            valor = int(n)
-            ok = True
-        else:
-            print('Erro! Digite um número válido')
-        if ok:
-            break
-    return valor
 
-def leiaFlot(msg):
+def leiaInt(msg):            
     while True:
-        valor = input(msg)
-        if valor.isnumeric():
-            return float(valor)
+        try:
+            valor = int(input(msg))
+        except(ValueError, TypeError):
+            print('ERRO: POR FAVOR, DIGITE UM NÚMERO INTEIRO VÁLIDO')
+            continue
+        except(KeyboardInterrupt):
+            print('Usuário preferiu não digita esse número.')
+            return 0
         else:
-            print('ERRO: POR FAVOR, DIGITE UM NÚMERO REAL VALIDO')
-#     while True:
-#         valor = input(msg)
-#         if valor.isnumeric():
-#             return int(valor)
-#         else:
-#             print('ERRO: POR FAVOR, DIGITE UM NÚMERO INTEIRO VÁLIDO')
+            return valor
+def leiaFloat(msg):
+     while True:
+        try:
+            valor = float(input(msg))
+        except(ValueError, TypeError):
+            print('ERRO: POR FAVOR, DIGITE UM NÚMERO REAL VÁLIDO')
+            continue
+        except(KeyboardInterrupt):
+            print('O usuário prefiriu não digita esse número.')
+        else:
+            return valor
 
-# def leiaFlot(msg):
-#     while True:
-#         valor = input(msg)
-#         if valor.isnumeric():
-#             return float(valor)
-#         else:
-#             print('ERRO: POR FAVOR, DIGITE UM NÚMERO REAL VALIDO')
 
 i = leiaInt('Digite um INTEIRO: ')
-r = leiaFlot('Digite um numero REAL: ')
-print (f'O valor inteiro digitado foi {i} e o real foi {r}')
+f = leiaFloat('Digite um numero REAL: ')
+print (f'O valor inteiro digitado foi {i} e o real foi {f} ...')
