@@ -1,0 +1,3 @@
+Jaki; 31
+Vitoria; 30
+lucas; 28
